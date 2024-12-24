@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./node_modules/preline/dist/preline.js"></script>
+    <link rel="stylesheet" href="build.css">
+    <title>Coffee Shop</title>
+</head>
+
+<body>
+    <!-- Hero -->
+    <div id="home" class="min-h-auto"
+        style="background-image: url(https://images.unsplash.com/photo-1447933601403-0c6688de566e?q=80&w=1961&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);">
+        <div class="hero-overlay bg-opacity-60"></div>
+        <!-- ========== HEADER ========== -->
+        <header class="fixed z-50 top-0 inset-x-0 flex flex-wrap md:justify-start md:flex-nowrap  w-full text-sm">
+            <nav
+                class="mt-4 z-9999 relative max-w-2xl w-full bg-white border border-gray-200 rounded-[2rem] mx-2 py-2.5 md:flex md:items-center md:justify-between md:py-0 md:px-4 md:mx-auto dark:bg-neutral-900 dark:border-neutral-700">
+                <div class="px-4 md:px-0 flex justify-between items-center">
+                    <!-- Logo -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 8h1a4 4 0 010 8h-1" />
+                        <path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z" />
+                        <line x1="6" y1="1" x2="6" y2="4" />
+                        <line x1="10" y1="1" x2="10" y2="4" />
+                        <line x1="14" y1="1" x2="14" y2="4" />
+                    </svg>
+                    <!-- End Logo -->
+
+                    <div class="md:hidden">
+                        <!-- Toggle Button -->
+                        <button type="button"
+                            class="hs-collapse-toggle flex justify-center items-center size-6 border border-gray-200 text-gray-500 rounded-full hover:bg-gray-200 focus:outline-none focus:bg-gray-200 dark:border-neutral-700 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
+                            id="hs-navbar-header-floating-collapse" aria-expanded="false"
+                            aria-controls="hs-navbar-header-floating" aria-label="Toggle navigation"
+                            data-hs-collapse="#hs-navbar-header-floating">
+                            <svg class="hs-collapse-open:hidden shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg"
+                                width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="3" x2="21" y1="6" y2="6" />
+                                <line x1="3" x2="21" y1="12" y2="12" />
+                                <line x1="3" x2="21" y1="18" y2="18" />
+                            </svg>
+                            <svg class="hs-collapse-open:block hidden shrink-0 size-4"
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M18 6 6 18" />
+                                <path d="m6 6 12 12" />
+                            </svg>
+                        </button>
+                        <!-- End Toggle Button -->
+                    </div>
+                </div>
+
+                <div id="hs-navbar-header-floating"
+                    class="hidden hs-collapse overflow-hidden transition-all duration-300 basis-full grow md:block"
+                    aria-labelledby="hs-navbar-header-floating-collapse">
+                    <div
+                        class="flex flex-col md:flex-row md:items-center md:justify-end gap-2 md:gap-3 mt-3 md:mt-0 py-2 md:py-0 md:ps-7">
+                        <a class="py-0.5 md:py-3 px-4 md:px-1 border-s-2 md:border-s-0 md:border-b-2 border-transparent text-gray-500 hover:text-gray-800 focus:outline-none dark:text-neutral-400 dark:hover:text-neutral-200"
+                            href="#">Home</a>
+                        <a class="py-0.5 md:py-3 px-4 md:px-1 border-s-2 md:border-s-0 md:border-b-2 border-transparent text-gray-500 hover:text-gray-800 focus:outline-none dark:text-neutral-400 dark:hover:text-neutral-200"
+                            href="#Product">Product</a>
+                        <a class="py-0.5 md:py-3 px-4 md:px-1 border-s-2 md:border-s-0 md:border-b-2 border-transparent text-gray-500 hover:text-gray-800 focus:outline-none dark:text-neutral-400 dark:hover:text-neutral-200"
+                            href="#AboutUs">About Us</a>
+                        <a class="py-0.5 md:py-3 px-4 md:px-1 border-s-2 md:border-s-0 md:border-b-2 border-transparent text-gray-500 hover:text-gray-800 focus:outline-none dark:text-neutral-400 dark:hover:text-neutral-200"
+                            href="https://wa.me/6285960280085?text=Saya ingin tanya-tanya tentang kopi yang anda jual">Chat
+                            Admin</a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <!-- ========== END HEADER ========== -->
+        <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-24 space-y-8">
+
+            <!-- Title -->
+            <div class="max-w-3xl text-center mx-auto">
+                <h1 class="block font-medium text-gray-200 text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
+                    Selamat Datang Di Coffee Shop Termurah Se TangerangRaya
+                </h1>
+            </div>
+            <!-- End Title -->
+
+            <div class="max-w-3xl text-center mx-auto">
+                <p class="text-lg font-semibold text-white/70">Klik Pada Bagian Product Untuk Membeli.</p>
+            </div>
+
+            <!-- Buttons -->
+            <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m9 18 6-6-6-6" />
+            </svg>
+            </a>
+        </div>
+        <!-- End Buttons -->
+    </div>
+    </div>
+    <!-- End Hero -->
+    <section id="Product">
+        <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
+            <header class="text-center">
+                <h2 class="text-xl font-bold text-gray-900 sm:text-3xl">Product Collection</h2>
+
+                <p class="mx-auto mt-4 max-w-md text-gray-500">
+                    SILAHKKAN DILIHAT TERLEBIH DAHULU MENU MENU YANG ADA DI TOKO KAMI.
+                </p>
+            </header>
+
+            <!-- Product List -->
+            <ul class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                <li>
+                    <a href="https://wa.me/6285960280085?text=Saya ingin Membeli Kopi Susu Panas"
+                        class="group block overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1727895938446-719b2587ae03?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDd8fHxlbnwwfHx8fHw%3D"
+                            alt="" class=" h-[350px] w-full object-cover transition duration-500 group-hover:scale-105
+                            sm:h-[450px]" />
+
+                        <div class="relative bg-white pt-3">
+                            <h3 class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
+                                Kopi Susu Panas
+                            </h3>
+
+                            <p class="mt-2">
+                                <span class="sr-only"> Regular Price </span>
+
+                                <span class="tracking-wider text-gray-900"> Rp.15.000 </span>
+                            </p>
+                        </div>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://wa.me/6285960280085?text=Saya ingin Membeli Kopi Hitam"
+                        class="group block overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1697021833011-1d695df02e6b?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            alt=""
+                            class="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]" />
+
+                        <div class="relative bg-white pt-3">
+                            <h3 class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
+                                Kopi Hitam
+                            </h3>
+
+                            <p class="mt-2">
+                                <span class="sr-only"> Regular Price </span>
+
+                                <span class="tracking-wider text-gray-900"> Rp. 10.000 </span>
+                            </p>
+                        </div>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://wa.me/6285960280085?text=Saya ingin Membeli Espresso"
+                        class="group block overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1666854448526-2232df89b6bf?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE4fHx8ZW58MHx8fHx8"
+                            alt=""
+                            class="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]" />
+
+                        <div class="relative bg-white pt-3">
+                            <h3 class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
+                                Espresso
+                            </h3>
+
+                            <p class="mt-2">
+                                <span class="sr-only"> Regular Price </span>
+
+                                <span class="tracking-wider text-gray-900"> Rp. 12.000 </span>
+                            </p>
+                        </div>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://wa.me/6285960280085?text=Saya ingin Membeli Kopi Matcha"
+                        class="group block overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1725799957338-51f677c0ffa3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            alt=""
+                            class="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]" />
+
+                        <div class="relative bg-white pt-3">
+                            <h3 class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
+                                Kopi Matcha
+                            </h3>
+
+                            <p class="mt-2">
+                                <span class="sr-only"> Regular Price </span>
+
+                                <span class="tracking-wider text-gray-900"> Rp. 15.000 </span>
+                            </p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <ul class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                <li>
+                    <a href="https://wa.me/6285960280085?text=Saya Ingin Membeli Es Kopi Latte"
+                        class="group block overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            alt="" class=" h-[350px] w-full object-cover transition duration-500 group-hover:scale-105
+                            sm:h-[450px]" />
+
+                        <div class="relative bg-white pt-3">
+                            <h3 class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
+                                Es Kopi Latte
+                            </h3>
+
+                            <p class="mt-2">
+                                <span class="sr-only"> Regular Price </span>
+
+                                <span class="tracking-wider text-gray-900"> Rp. 20.000 </span>
+                            </p>
+                        </div>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://wa.me/6285960280085?text=Saya ingin Membeli Es Kopi Susu"
+                        class="group block overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1566704284379-0d6fdf3d229c?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            alt=""
+                            class="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]" />
+
+                        <div class="relative bg-white pt-3">
+                            <h3 class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
+                                Es Kopi Susu
+                            </h3>
+
+                            <p class="mt-2">
+                                <span class="sr-only"> Regular Price </span>
+
+                                <span class="tracking-wider text-gray-900"> Rp. 20.000 </span>
+                            </p>
+                        </div>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://wa.me/6285960280085?text=Saya ingin Membeli Es Kopi Coklat"
+                        class="group block overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1527156231393-7023794f363c?q=80&w=2022&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            alt=""
+                            class="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]" />
+
+                        <div class="relative bg-white pt-3">
+                            <h3 class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
+                                Es Kopi Coklat
+                            </h3>
+
+                            <p class="mt-2">
+                                <span class="sr-only"> Regular Price </span>
+
+                                <span class="tracking-wider text-gray-900"> Rp. 25.000 </span>
+                            </p>
+                        </div>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://wa.me/6285960280085?text=Saya ingin Membeli Ice Americano"
+                        class="group block overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1531835207745-506a1bc035d8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDMzfHx8ZW58MHx8fHx8"
+                            alt=""
+                            class="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]" />
+
+                        <div class="relative bg-white pt-3">
+                            <h3 class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
+                                Ice Americano
+                            </h3>
+
+                            <p class="mt-2">
+                                <span class="sr-only"> Regular Price </span>
+
+                                <span class="tracking-wider text-gray-900"> Rp.20.000 </span>
+                            </p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <div id="AboutUs"></div>
+    <div class="max-w-7xl px-4 lg:px-6 py-12 lg:py-24 mx-auto">
+        <div class="mb-6 sm:mb-10 max-w-2xl text-center mx-auto">
+            <h2 class="font-medium text-black text-2xl sm:text-4xl dark:text-white">
+                Contacts
+            </h2>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 lg:items-center gap-6 md:gap-8 lg:gap-12">
+            <div
+                class="aspect-w-16 aspect-h-6 lg:aspect-h-14 overflow-hidden bg-gray-100 rounded-2xl dark:bg-neutral-800">
+                <img class="group-hover:scale-105 group-focus:scale-105 transition-transform duration-500 ease-in-out object-cover rounded-2xl"
+                    src="https://images.unsplash.com/photo-1625965357314-462d78dea2f6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTF8fGNvZmZlZSUyMHNob3B8ZW58MHwwfDB8fHwy"
+                    alt="Contacts Image">
+            </div>
+            <!-- End Col -->
+
+            <div class="space-y-8 lg:space-y-16">
+                <div>
+                    <h3 class="mb-5 font-semibold text-black dark:text-white">
+                        Our address
+                    </h3>
+
+                    <!-- Grid -->
+                    <div class="grid sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8 lg:gap-12">
+                        <div class="flex gap-4">
+                            <svg class="shrink-0 size-5 text-gray-500 dark:text-neutral-500"
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+
+                            <div class="grow">
+                                <p class="text-sm text-gray-600 dark:text-neutral-400">
+                                    United Kingdom
+                                </p>
+                                <address class="mt-1 text-black not-italic dark:text-white">
+                                    300 Bath Street, Tay House<br>
+                                    Glasgow G2 4JR
+                                </address>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Grid -->
+                </div>
+
+                <div>
+                    <h3 class="mb-5 font-semibold text-black dark:text-white">
+                        Our contacts
+                    </h3>
+
+                    <!-- Grid -->
+                    <div class="grid sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8 lg:gap-12">
+                        <div class="flex gap-4">
+                            <svg class="shrink-0 size-5 text-gray-500 dark:text-neutral-500"
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="M21.2 8.4c.5.38.8.97.8 1.6v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V10a2 2 0 0 1 .8-1.6l8-6a2 2 0 0 1 2.4 0l8 6Z">
+                                </path>
+                                <path d="m22 10-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 10"></path>
+                            </svg>
+
+                            <div class="grow">
+                                <p class="text-sm text-gray-600 dark:text-neutral-400">
+                                    Email us
+                                </p>
+                                <p>
+                                    <a class="relative inline-block font-medium text-black before:absolute before:bottom-0.5 before:start-0 before:-z-[1] before:w-full before:h-1 hover:before:bg-black focus:outline-none focus:before:bg-black dark:text-white dark:hover:before:bg-white dark:focus:before:bg-white"
+                                        href="mailto:example@site.so">
+                                        hello@example.so
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <svg class="shrink-0 size-5 text-gray-500 dark:text-neutral-500"
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                            </svg>
+
+                            <div class="grow">
+                                <p class="text-sm text-gray-600 dark:text-neutral-400">
+                                    Call us
+                                </p>
+                                <p>
+                                    <a class="relative inline-block font-medium text-black before:absolute before:bottom-0.5 before:start-0 before:-z-[1] before:w-full before:h-1 hover:before:bg-black focus:outline-none focus:before:bg-black dark:text-white dark:hover:before:bg-white dark:focus:before:bg-white"
+                                        href="mailto:example@site.so">
+                                        +44 222 777-000
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Grid -->
+                </div>
+            </div>
+            <!-- End Col -->
+        </div>
+    </div>
+    <!-- End Contact -->
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="mt-auto w-full max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 mx-auto">
+        <!-- Grid -->
+        <div class="text-center">
+            <div>
+                <a class="flex-none text-xl font-semibold text-black dark:text-white" href="#"
+                    aria-label="Brand">Brand</a>
+            </div>
+            <!-- End Col -->
+
+            <div class="mt-3">
+                <p class="text-gray-500 dark:text-neutral-500">We're part of the <a
+                        class="decoration-2 hover:underline focus:outline-none focus:underline font-medium dark:text-blue-500">Coffe
+                        TNG</a>
+                    family.</p>
+                <p class="text-gray-500 dark:text-neutral-500">
+                    © 2024 Ridho Zayin Zidane.
+                </p>
+            </div>
+
+            <!-- Social Brands -->
+            <div class="mt-3 space-x-1">
+                <a class="size-8 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-500 hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:text-neutral-400 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
+                    href="#">
+                    <svg fill="#000000" width="25" height="25" viewBox="0 0 24 24" id="facebook" data-name="Line Color"
+                        xmlns="http://www.w3.org/2000/svg" class="icon line-color">
+                        <path id="primary" d="M14,7h4V3H14A5,5,0,0,0,9,8v3H6v4H9v6h4V15h3l1-4H13V8A1,1,0,0,1,14,7Z"
+                            style="fill: none; stroke: rgb(0, 0, 0); stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;">
+                        </path>
+                    </svg>
+                </a>
+                <a class="size-8 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-500 hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:text-neutral-400 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
+                    href="#">
+                    <svg fill="#000000" width="25" height="25" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                        data-name="Layer 1">
+                        <path
+                            d="M17.34,5.46h0a1.2,1.2,0,1,0,1.2,1.2A1.2,1.2,0,0,0,17.34,5.46Zm4.6,2.42a7.59,7.59,0,0,0-.46-2.43,4.94,4.94,0,0,0-1.16-1.77,4.7,4.7,0,0,0-1.77-1.15,7.3,7.3,0,0,0-2.43-.47C15.06,2,14.72,2,12,2s-3.06,0-4.12.06a7.3,7.3,0,0,0-2.43.47A4.78,4.78,0,0,0,3.68,3.68,4.7,4.7,0,0,0,2.53,5.45a7.3,7.3,0,0,0-.47,2.43C2,8.94,2,9.28,2,12s0,3.06.06,4.12a7.3,7.3,0,0,0,.47,2.43,4.7,4.7,0,0,0,1.15,1.77,4.78,4.78,0,0,0,1.77,1.15,7.3,7.3,0,0,0,2.43.47C8.94,22,9.28,22,12,22s3.06,0,4.12-.06a7.3,7.3,0,0,0,2.43-.47,4.7,4.7,0,0,0,1.77-1.15,4.85,4.85,0,0,0,1.16-1.77,7.59,7.59,0,0,0,.46-2.43c0-1.06.06-1.4.06-4.12S22,8.94,21.94,7.88ZM20.14,16a5.61,5.61,0,0,1-.34,1.86,3.06,3.06,0,0,1-.75,1.15,3.19,3.19,0,0,1-1.15.75,5.61,5.61,0,0,1-1.86.34c-1,.05-1.37.06-4,.06s-3,0-4-.06A5.73,5.73,0,0,1,6.1,19.8,3.27,3.27,0,0,1,5,19.05a3,3,0,0,1-.74-1.15A5.54,5.54,0,0,1,3.86,16c0-1-.06-1.37-.06-4s0-3,.06-4A5.54,5.54,0,0,1,4.21,6.1,3,3,0,0,1,5,5,3.14,3.14,0,0,1,6.1,4.2,5.73,5.73,0,0,1,8,3.86c1,0,1.37-.06,4-.06s3,0,4,.06a5.61,5.61,0,0,1,1.86.34A3.06,3.06,0,0,1,19.05,5,3.06,3.06,0,0,1,19.8,6.1,5.61,5.61,0,0,1,20.14,8c.05,1,.06,1.37.06,4S20.19,15,20.14,16ZM12,6.87A5.13,5.13,0,1,0,17.14,12,5.12,5.12,0,0,0,12,6.87Zm0,8.46A3.33,3.33,0,1,1,15.33,12,3.33,3.33,0,0,1,12,15.33Z" />
+                    </svg>
+                </a>
+                <a class="size-8 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-500 hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:text-neutral-400 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
+                    href="#">
+                    <svg fill="#000000" width="25" height="25" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                        data-name="Layer 1">
+                        <path
+                            d="M12,2.2467A10.00042,10.00042,0,0,0,8.83752,21.73419c.5.08752.6875-.21247.6875-.475,0-.23749-.01251-1.025-.01251-1.86249C7,19.85919,6.35,18.78423,6.15,18.22173A3.636,3.636,0,0,0,5.125,16.8092c-.35-.1875-.85-.65-.01251-.66248A2.00117,2.00117,0,0,1,6.65,17.17169a2.13742,2.13742,0,0,0,2.91248.825A2.10376,2.10376,0,0,1,10.2,16.65923c-2.225-.25-4.55-1.11254-4.55-4.9375a3.89187,3.89187,0,0,1,1.025-2.6875,3.59373,3.59373,0,0,1,.1-2.65s.83747-.26251,2.75,1.025a9.42747,9.42747,0,0,1,5,0c1.91248-1.3,2.75-1.025,2.75-1.025a3.59323,3.59323,0,0,1,.1,2.65,3.869,3.869,0,0,1,1.025,2.6875c0,3.83747-2.33752,4.6875-4.5625,4.9375a2.36814,2.36814,0,0,1,.675,1.85c0,1.33752-.01251,2.41248-.01251,2.75,0,.26251.1875.575.6875.475A10.0053,10.0053,0,0,0,12,2.2467Z" />
+                    </svg>
+                </a>
+            </div>
+            <!-- End Social Brands -->
+        </div>
+        <!-- End Grid -->
+    </footer>
+    <!-- ========== END FOOTER ========== -->
+
+</body>
+
+</html>
